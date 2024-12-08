@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<!--Header-->
+    <div class="stickyDiv" id="menu">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="active">Home</a>
+                </li>
+                <li class="services">services
+                    <ul>
+                        <li>
+                            <a href="#">Website & Apps Development</a>
+                        </li>
+                        <li>
+                            <a href="#">Web Hosting</a>
+                        </li>
+                        <li>
+                            <a href="#">web Maintenance</a>
+                        </li>
+                        <li>
+                            <a href="#">Consultation ant training</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+                <li>
+                    <a href="#">Galley</a>
+                </li>
+                <li class="sign">
+                    <a href="#">Sign Up</a>
+                </li>
+                <li class="sign">
+                    <a href="#">LogIn</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+<!--User Input Verificatio-->
+<h3>User Input Verification</h3>
+<div class="users" id="user" style="color: white;" > 
+    <h1 id = "check">Enter Your Details in Capital Letters</h1>
+        
+        <div class="userbox">First Name:</div> 
+        <div class="userbox"><input type="text" id = "firstName" placeholder="Your First Name" required/></div>
+ 
+        <div class="userbox"> Last Name:</div> 
+        <div class="userbox"><input type="text" id = "lastName" placeholder="Your Last Name" required/></div>
+   
+        <div class="userbox">Email:</div> 
+        <div class="userbox"><input type="email" id = "email" placeholder="Your @ Email" required/></div>
+
+        <div class="userbox">Date of Birth:</div> 
+        <div class="userbox"><input type="date" id = "dob" placeholder="Dirth of Birth" required/></div>
+  
+        <div class="userbox" >Phone Number:
+        </div>
+        <div class="userbox" >
+            <select style="height: 27px; border: none;border-bottom-left-radius: 5px; border-top-left-radius: 5px;">
+                <option value="">+234</option>
+                <option value="">+233</option>
+                <option value="">+228</option>
+            </select>
+            <input style="width: 75.5%; border-bottom-left-radius: 0px; border-top-left-radius: 0px;" type="text" id = "phone" placeholder="Phone Number" required/>
+        </div>
+ 
+        <div class="userbox">Address:</div> 
+        <div class="userbox"><input type="text" id = "address" placeholder="Your Address" required/></div>
+
+      <div class="userbox"></div> <div class="userbox"><button onclick="confirmInfo()" >Submit</button></div>
+</div>
+<br>
+
+<!--Confirm details-->
+<div class="result" id ="confirm" style="color: black;">
+    <div class="usersConfirm">
+        <h1>Confirm Your Details Before Clicking Ok</h1>
+    
+            <div class="userbox">First Name:</div> 
+            <div class="userbox"><input type="text" id = "firstNamec" placeholder="Your First Name" required/></div>
+       
+            <div class="userbox"> Last Name:</div> 
+            <div class="userbox"><input type="text" id = "lastNamec" placeholder="Your Last Name" required/></div>
+       
+            <div class="userbox">Email:</div> 
+            <div class="userbox"><input type="email" id = "emailc" placeholder="Your Email" required/></div>
+      
+            <div class="userbox">Date of Birth:</div> 
+            <div class="userbox"><input type="date" id = "dobc" placeholder="Dirth of Birth" required/></div>
+      
+            <div class="userbox">Phone Number:
+            </div>
+            <div class="userbox" >
+                <select style="height: 27px; border: none;border-bottom-left-radius: 5px; border-top-left-radius: 5px;">
+                    <option value="">+234</option>
+                    <option value="">+233</option>
+                    <option value="">+228</option>
+                </select>
+                    <input style="width: 76%; border-bottom-left-radius: 0px; border-top-left-radius: 0px;" type="text" id = "phonec" placeholder="Phone Number" required/>
+            </div>
+      
+            <div class="userbox">Address:</div> 
+            <div class="userbox"><input type="text" id = "addressc" placeholder="Your Address" required/></div>
+    
+           <div class="userbox"><button class="btn2"><a onclick="ThankYou()">OK</a></button></div>
+           <div class="userbox"><button  class="btn3" onclick="Cancel()">Cancel</button></div>
+    </div>
+</div>
+
+
+<script>
+    function confirmInfo() {
+        let firstName = document.getElementById("firstName").value;;
+        let lastName = document.getElementById("lastName").value;
+        let email = document.getElementById("email").value;
+        let dob = document.getElementById("dob").value;
+        let phone = document.getElementById("phone").value;
+        let address = document.getElementById("address").value;
+
+        if(firstName == "" ){
+            alert("Please Enter your First name");
+            firstName.focus();
+        }
+        if(lastName == "" ){
+            alert("Please Enter your Last name");
+            lastName.focus();
+        }
+        if(email == "" ){
+            alert("Please Enter your Email");
+            email.focus();
+        }
+        if(dob == "" ){
+            alert("Please Select your Date of Birth");
+            dob.focus();
+        }
+        if(phone == "" ){
+            alert("Please Enter your Phone Number");
+            phone.focus();
+        }
+        if(address == "" ){
+            alert("Please Enter your Address");
+            address.focus();
+        }
+
+        //Assign values to Confirmation box changing all to Upper Case
+        document.getElementById("firstNamec").value = firstName.toUpperCase();
+        document.getElementById("lastNamec").value = lastName.toUpperCase();
+        document.getElementById("emailc").value = email.toUpperCase();
+        document.getElementById("dobc").value = dob;
+        document.getElementById("phonec").value = phone.toUpperCase();
+        document.getElementById("addressc").value = address.toUpperCase();
+
+        //Display Confirmation Box
+        let confirm = document.getElementById('confirm');
+            if(confirm.style.display==='block'){
+            confirm.style.display = 'none';
+            }else{
+            confirm.style.display = 'block';
+        }
+
+    }
+
+    //Cancel Function
+        function Cancel(){
+            let close = document.getElementById('confirm');
+                if(close.style.display==='none'){
+                close.style.display = 'block';
+                }else{
+                close.style.display = 'none';
+            }
+        }
+
+    //Ok button Function
+    function ThankYou(){
+        alert("Thanks for Signing Up, Welcome Home!!!");
+        Window.open(location="pageLoader1.html");
+    }
+</script>
+
+
+<br><br>
+<hr>
+<h2>JavaScript setInterval() and clearInterval() Method</h2>
+<p id ="t"></p>
+<button onclick="myStopFunction()">Stop Time</button>
+
+
+<script>
+    //setInterval and using clearInterval to stop the digital watch
+    const myInterval = setInterval(myTimer, 1000);
+    function myTimer(){
+        const date = new Date();
+        document.getElementById("t").innerHTML = date.toLocaleTimeString();
+    }
+    function myStopFunction(){
+        clearInterval(myInterval);
+    }
+</script>
+
+
+
+<br><br><br><br>
+<!--ANIMATIONARROWS-->
+<h3>Animation Arrow/Item</h3>
+<div class="divAni">
+<div class="divAnimation1">
+    <img src="/images/arrow.png" width="200" />
+</div>
+<div class="divAnimation2">
+    <img src="/images/arrow2.png" width="200" />
+    <!--use px for the image not % for the mother div not to cover it-->
+</div>
+</div>
+
+
+
+<!--Using function to activate the animation on screen focus-->
+
+<br><br><br><br>
+<h2>Using function to activate the animation on screen focus</h2>
+
+<h3>Animation Arrow/Item</h3>
+<div class="divAni2">
+<div class="divAnimation3">
+    <img src="/images/arrow.png" width="200" />
+</div>
+<div class="divAnimation4">
+    <img src="/images/arrow2.png" width="200" />
+    <!--use px for the image not % for the div not to cover it-->
+</div>
+</div>
+
+<script>
+    function animation (){
+        var reveals = document.querySelectorAll(
+            ".divAnimation3, .divAnimation4"
+        );
+
+        for(var i = 0; i < reveals.length; i++){
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if(elementTop < windowHeight - elementVisible){
+                reveals[i].classList.add("active");
+            }else{
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", animation);
+</script>
+
+
+
+<br><br<br>
+    <!--Rotating & Scaling Animation-->
+    <h3>Rotating & Scaling Animation</h3>
+    <div class="newspaperHold">
+        <div class="newspaper">Spinning newspaper<br>Causes dizzness</div> 
+    </div>
+    <script>
+        const newspaperSpinning = [
+            {transform: 'rotate(0) scale(1)'},
+            {transform: 'rotate(360deg) scale(0)'}
+        ];
+        const newspaperTiming = {
+            duration: 2000, 
+            iterations: 1,
+            }
+        const newspaper = document.querySelector(".newspaper", "newspaperHold");
+
+        window.addEventListener('scroll', () => {
+            newspaper.animate(newspaperSpinning, newspaperTiming);
+        });
+    </script>
+
+
+<br><br><br>
+<!--Emerged Effect-->
+<div id="peekaboo"><a href="wwww.geeksforgeeks.com">Learn React</a></div>
+
+
+<script>
+    //Scroll effect script
+    function yScrollHandler(){
+        var win = document.getElementById("peekaboo");
+        if((window.pageYOffset + window.innerHeight) 
+            >= document.body.offsetHeight){
+        //win.style.webkitTransition = "right 0.7s ease-in-out 0s";
+        win.style.transition = "right 0.7s ease-in-out 0s";
+        win.style.right = "0px";
+        } else {
+        win.style.transition = "right 0.7s ease-in-out 0s";
+        win.style.right = "-452px";
+        }
+    }
+    window.onscroll = yScrollHandler;
+    </script>
+
+
+
+
+<br><br><br>
+<!--Round Progress Bar-->
+<h2>Progress bar</h2>
+<div class="main">
+    <div class="skill">
+        <div class="outer">
+            <div class="inner">
+                <div id="number">
+    
+                </div>
+            </div>
+        </div>
+        <svg xmlns = "http://www.w3.org/2000/svg" version = "1.1" width="160px" height="160px">
+            <defs>
+                <linearGradient id ="GradientColor">
+                    <stop offset = "0%" stop-color ="#e91e63"/>
+                    <stop offset = "100%" stop-color ="#673ab7"/>
+                </linearGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" stroke-linecap = "round"/>
+            </svg>
+    </div>
+</div>
+
+
+<script>
+    let number = document.getElementById("number");
+    let counter = 0;
+    setInterval(() => {
+        if(counter == 99){
+            clearInterval();
+        }else{
+            counter++;
+            number.innerHTML = counter + "%";
+        }
+        
+    }, 20);
+    
+</script>
+
+
+
+<br><br><br><hr>
+<!--Modal Example-->
+<h2>Using JavaScript to diaplay Modal</h2>
+<button id="myBtn">Open Modal</button>
+<!--Modal Div-->
+<div class="modal" id="myModal">
+<!--Modal Content-->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>some text and other content of the modeal her</p>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function (){
+        modal.style.display = "block";
+    }
+    span.onclick = function (){
+        modal.style.display = "none";
+    }
+
+/*when use click other parts outside of the modal, close it */
+window.onclick = function(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+<br><br><br><hr>
+<!--Modal Example with Header and Footer-->
+<h2>Using JavaScript to diaplay Modal with Header & Footer</h2>
+<button id="myBtn1">Open Modal</button>
+<!--Modsl Div-->
+<div class="modal1" id="myModal1">
+<!--Modsl Content-->
+    <div class="modal-content1">
+        
+        <div class="modal-header">
+            <span class="close1">&times;</span>
+            <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body">
+            <p>This is Modal Body with your contents</p>
+            <img src="/images/pic_bulbon.gif" width="100vh"/>
+        </div>
+        <div class="modal-footer">
+            <h3>Modal Footer</h3>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var modal1 = document.getElementById("myModal1");
+    var btn1 = document.getElementById("myBtn1");
+    var span1 = document.getElementsByClassName("close1")[0];
+    btn1.onclick = function (){
+        modal1.style.display = "block";
+    }
+    span1.onclick = function (){
+        modal1.style.display = "none";
+    }
+
+/*when use click other parts outside of the modal, close it */
+window.onclick = function(event1){
+    if(event1.target == modal1){
+        modal1.style.display = "none";
+    }
+}
+</script>
+
+<br><br><hr>
+<!--Cookies-->
+<h2>JavaScript Cookies </h2>
+<script>
+    function setCookie(cname, cvalue, exdays){
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = 
+        cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname){
+        let name = cname + "=";
+        let decodedCookie =
+        decodeURIComponent(document.cookie);
+        let ca = 
+       decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' '){
+                c = c.substring(1);
+            }
+            if(c.indexOf(name) == 0){
+                return
+                c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        let user = getCookie("username");
+        if (user !=""){
+            alert("Welcome again " + user);
+        }else{
+            user = prompt("Please enter your name:", "");
+            if(user != "" && user != null){
+                setCookie("username", user, 30);
+            }
+        }
+      
+    }
+</script>
+<!--  body onload="checkCookie()"></body -->
+
+<br><br><hr>
+<!-- Validation of number using input max and min attribute -->
+<h2>Validation of number using input max and min attribute</h2>
+<h4>max of 100 here using validity.rangeOverflow method</h4>
+<input type="number" name="num1" id="id1" max="100">
+<button onclick="myNumCheck()">Ok</button>
+<p id="numCheck"></p>
+<script>
+    function myNumCheck() {
+        let text;
+        
+        if (document.getElementById("id1").validity.rangeOverflow){
+            text = "Value too large";
+        }else{
+            text = "value is ok";
+        }
+        document.getElementById("numCheck").innerHTML = text;
+    }
+</script>
+<br>
+<h4>min of 100 here using validity.rangeUnderflow method</h4>
+<input type="number" name="num1" id="id2" min="100">
+<button onclick="myNumCheck2()">Ok</button>
+<p id="numCheck1"></p>
+<script>
+    function myNumCheck2() {
+        let text;
+        if (document.getElementById("id2").validity.rangeUnderflow){
+            text = "Value too small";
+        }else{
+            text = "value is ok";
+        }
+        document.getElementById("numCheck1").innerHTML = text;
+    }
+</script>
+<br><br>
+
+<h2>Animation div from left</h2>
+<div class="anime">Welcome to my home!!!</div>
+<script>
+function animation (){
+    var reveal = document.querySelectorAll(
+        ".anime"
+    );
+
+    for(var i = 0; i < reveal.length; i++){
+        var windowHeight = window.innerHeight;
+        var elementTop = reveal[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        if(elementTop < windowHeight - elementVisible){
+            reveal[i].classList.add("active");
+        }else{
+            reveal[i].classList.remove("active");
+        }
+    }
+}
+window.addEventListener("scroll", animation);
+</script>
+
+
+
+<br><br>
+<h2>Linear Progress Bar Using setInterval/clearInterval method</h2>
+<div id="myProgress">
+    <div id="myBar"></div>
+</div>
+<br>
+<button onclick="move()">Click me</button>
+<script>
+    function move() {
+        const element = document.getElementById("myBar");
+        let width= 0;
+        let counter = 0;
+        const id = setInterval(frame, 10);
+            function frame() {
+                if(width == 100 && counter ==100) {
+                    clearInterval(id);
+                }else{
+                    width++;
+                    element.style.width = width + '%';
+                    counter += 1;
+                    myBar.innerHTML = counter + "%";
+                }
+            }
+         
+    }
+</script>
+
+
+</body>
+</html>

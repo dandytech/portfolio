@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptTest</title>
+    <script src="mydateFunctionScript.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>My First javaScript</h2>
+    <button type="button" onclick="document.getElementById('today').innerHTML = Date()">
+        Click to display Date and Time
+    </button>
+    <p id="today"></p>
+
+<br><br>
+    <h2>What JavaScript can do</h2>
+    <p id="demo">1. JS can change the HTML content.</p>
+    <button onclick='document.getElementById("demo").innerHTML = "Hello, just changed now!" '>Click here</button>
+    <br><br><hr>
+
+    <p id="demo">2. JS can change the HTML attribute value.</p>
+    <p>Here in this example it changes the src (source) attribute of image </p>
+
+    <img id="myimg" src="/images/pic_bulboff.gif" style="width: 100px">
+
+    <button onclick="document.getElementById('myimg').src='/images/pic_bulbon.gif'">Turn on the light</button>
+    <button onclick="document.getElementById('myimg').src='/images/pic_bulboff.gif'">Turn off the light</button>
+    <br><br><hr>
+
+    <p>3. It can Change the HTML styles (CSS)</p>
+    <button onclick="document.getElementById('myimg').style.width='200px' ">Click to change bulb width</button>
+    <br><br><hr>
+
+    <p>4. It can hide/show HTML Elements</p>
+    <button onclick="document.getElementById('myimg').style.display='none' ">Click to hide the bulb</button>
+    <button onclick="document.getElementById('myimg').style.display='block' ">Click to show the bulb</button>
+
+    <br><br><hr>
+   <h2>JavaScript Function</h2> 
+   <p>block of codes called when an event occurs, say user click button</p>
+
+   <script>
+    function myFunction() {
+        document.getElementById("callme").innerHTML = "Paragraph changed.";
+
+    }
+    </script>
+
+    <p id = "callme">A Paragraph</p>
+    <button type="button" onclick="myFunction()">Click to Call Function</button>
+<br><br><hr>
+
+<h2>External JavaScript</h2>
+<p>You can link it on <b> head </b> or body section</p>
+<button onclick="myDateFunction()">Click Here</button>
+<br><br><hr>
+
+<!--JavaScript statements-->
+<h2>JavaScript Statement</h2>
+<p>Simple arithmetic done here</p>
+<p id="result"></p>
+<script>
+function stm(){
+let a,b,c;
+a = 5; 
+b = 10; 
+c = a + b;
+window.alert(a + ' + ' +b+ ' = '+c);
+}
+</script>
+<button onclick="stm()">Click</button>
+
+<!--Open End User Addition-->
+<h3>JavaScript Open Ended Input</h3>
+<p>Simple open Ended Addition done here</p>
+<p id="result"></p>
+<script>
+function stm(){
+let a = Number(prompt('Enter a number')); 
+let b = Number(prompt('Enter another number'));  
+let c = a + b;
+window.alert(a + ' + ' +b+ ' = '+c);
+}
+</script>
+<button onclick="stm()">Click</button>
+
+<!--Converting Fahrenheit to Celsius-->
+<h2>Function Converting Fahrenheit to Celsius </h2>
+<p id = "r"></p>
+<script>
+    
+function toCelsius(f) {
+    return (5/9) * (f-32);
+}
+document.getElementById("r").innerHTML = "77 Fahrenheit to Celsius = " + toCelsius(77);
+</script>
+<hr>
+
+<!--Calling a function without argument()-->
+<p>Calling a function without argument in parenthenses<br>returns the function defintion instead of the result </p>
+<p id = "p"></p>
+<script>
+    
+function toCelsius(f) {
+    return (5/9) * (f-32);
+}
+document.getElementById("p").innerHTML =  toCelsius;
+</script>
+<hr>
+
+<!--Converting Fahrenheit to Celsius-->
+<h4>Open End Function Converting Fahrenheit to Celsius </h4>
+<script>
+function toCelsius() {
+    let f = Number(prompt('Enter the fahrenheit'));
+    let c= (5/9) * (f-32);
+    alert(f+ ' Fahrenheit to Celsius = '+c);
+}
+//document.getElementById("r").innerHTML = "77 Fahrenheit to Celsius = " + toCelsius(77);
+</script>
+<button onclick="toCelsius()">Click</button>
+
+<hr>
+<!--Local variables-->
+<h4>Variables declared within a function (Local) <br> can only be used within the function</h4>
+<p id ="i"></p>
+<p id ="j"></p>
+<script>
+    myCar();
+    function myCar() {
+     let car = "Lexus";
+     document.getElementById("i").innerHTML = typeof car + " " + car;
+    }
+    //calling outside the function
+    document.getElementById("j").innerHTML = typeof car;
+</script>
+
+
+
+<!--Here calls a function which performs a calculation, and returns the result-->
+<p id="y"></p>
+<script>
+    function myAdd(a, b){
+        return a * b;
+    }
+    document.getElementById("y").innerHTML = myAdd(4, 3);
+</script>
+<hr>
+<!--JavaScript Object-->
+<h3>JavaScript Objects</h3>
+<p>object can be used as a variable</p>
+
+<p id = "obj"></p>
+<script>
+    //create an object
+    const mycar = {type:"Lexus", color:"White", model:"2022"};
+    document.getElementById("obj").innerHTML = "The Car type is: " + mycar.type;
+</script>
+
+<!--JavaScript string-->
+<h2>JavaScript Strings Methods</h2>
+<p>1. slice(start, end) </p>
+<p>2. substring(start, end) </p>
+<p>3. substr(start, length) </p>
+<p id = "n"></p>
+ <p id = "str"></p>
+ <p id = "str1"></p>
+ <p id = "str2"></p>
+ <p id = "str3"></p>
+ <p id = "str4"></p>
+ <p id ="case"></p>
+ <p id ="case1"></p>
+<script>
+    let myname = "Nwankwo Daniel Amaechi";
+
+document.getElementById("n").innerHTML = "String for practical: " + myname;
+document.getElementById("str").innerHTML = ".length method counts all: " + myname.length;
+document.getElementById("str1").innerHTML = ".replace method: " + myname.replace("DANYTECH NIG. LTD");
+
+document.getElementById("str2").innerHTML = "slice(6, 12): end not inclusive: " + myname.slice(6, 12);
+document.getElementById("str3").innerHTML = "slice(-7, -4): " + myname.slice(-7, -4);
+document.getElementById("str4").innerHTML = "slice(6): " + myname.slice(6);
+document.getElementById("case").innerHTML = ".toUpperCase: " + myname.toUpperCase();
+document.getElementById("case1").innerHTML = ".toLowerCase: " + myname.toLowerCase();
+</script>
+
+<br><hr>
+<!--Ternary operator-->
+<p>JavaScript ternary Operator</p>
+<p>Vote Eligibity System</p>
+<p id = "vote"></p>
+<input id="age"  placeholder="Enter your age"/>
+<button onclick="myVote()">Vote Now</button>
+<script>
+    function myVote() {
+        let age = document.getElementById("age").value;
+        let votable = (age < 18) ? "Too young": "Old enough";
+        document.getElementById("vote").innerHTML = votable + " to vote";
+    }
+</script>
+<hr>
+<!--Javascript Arrow Function-->
+<h3>JavaScript Arrow function</h3>
+<p>Add two Numbers</p>
+<p id="answer"></p>
+<input type="number" name="x" id="n1" placeholder="Enter Number 1"/>
+<input type='number' name="y" id="n2" placeholder="Enter Number 2"/>
+<button onclick="myAdd()">Click to Add</button>
+
+<script>
+     function myAdd() { //Regular Function
+        const c = (a,b) =>  a+b; //arrow Function
+        const  first = Number(document.getElementById("n1").value);
+        const last = Number(document.getElementById("n2").value);
+
+        document.getElementById("answer").innerHTML = c(first,last);
+     }
+
+    console.log(first,last);
+</script>
+
+
+
+<hr>
+<!--Javascript Arrow Function-->
+<h3>JavaScript Arrow function</h3>
+<p>Solve Quadractic equation of a = -1, b = 1, c = 2</p>
+<p id = "r1"></p>
+<p id = "r2"></p>
+
+<script>
+    const x1 = (a,b,c) =>  (-b + Math.sqrt(Math.pow(b,2)-(4*a*c)))/(2*a);
+    const x2 = (a,b,c) =>  (-b - Math.sqrt(Math.pow(b,2)-(4*a*c)))/(2*a);
+
+  document.getElementById("r1").innerHTML =" x1 = " +x1(-1,1,2);
+  document.getElementById("r2").innerHTML = " x2 = " +x2(-1,1,2);
+</script>
+
+<!--Open ended quadratic-->
+<hr>
+<!--Javascript Arrow Function in a Function Quadractic-->
+<h3>JavaScript Regular function To:</h3>
+<p>Solve Quadractic equation (Open ended)</p>
+<p id = "p1"></p>
+<p id = "p2"></p>
+<button onclick="myQuadractic()">Click</button>
+<script>
+    function myQuadractic(){
+        
+     let x =   Number(prompt("Enter a"));
+     let y =  Number(prompt("Enter b"));
+     let z =   Number(prompt("Enter c"));
+
+     const x1 = (-y + Math.sqrt(Math.pow(y,2)-(4*x*z)))/(2*x);
+     const x2 = (-y - Math.sqrt(Math.pow(y,2)-(4*x*z)))/(2*x);
+     
+  document.getElementById("p1").innerHTML = "x1 = " +(x1);
+  document.getElementById("p2").innerHTML = "x2 = " +(x2);
+    }
+</script>
+<br><hr>
+
+<!--Javascript Class-->
+<h3>JavaScript Class</h3>
+<P>JS class are templates for Objects, Use "class" keyword to create a class, <br>
+    always add a method named "constructor()."
+</P>
+<p id="class"></p>
+<script>
+    class Cars {
+        constructor(color,name,year) {
+            this.color = color;
+            this.name = name;
+            this.yearb = year;
+        }
+    }
+const myCars = new Cars("White", "Ford", 2014);
+document.getElementById("class").innerHTML = myCars.color+ " " + myCars.name + " " + myCars.yearb;
+
+</script>
+
+<!--JavaScript Class method-->
+<h3>JavaScript class Method</h3>
+<p>A class method named age that returns car age</p>
+<p> How to define and use a class method</p>
+<p id = "carAge"></p>
+<script>
+    class AgeOfCar {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+
+        age() {
+            let date = new Date();
+            return date.getFullYear() - this.year;
+        }
+    }
+    let myCarAge = new AgeOfCar("Ford", 2014);
+    document.getElementById("carAge").innerHTML = "My Car is <b>" + myCarAge.age() + "</b>  years Old.";
+</script>
+
+<br>
+<hr>
+<p>Open Ended Function to calculate Human Age</p>
+<button id = "c" onclick="ageCalculator()">Click to Check your age</button>
+<script>
+    function ageCalculator(){
+
+        let date = new Date();
+
+        let d = Number(prompt("Enter day of birth"));
+        birthD= date.getDay() - d;
+
+        let m = Number(prompt("Enter Month of birth"));
+        birthM= date.getMonth() - m;
+
+        let y = Number(prompt("Enter Year of birth"));
+        birthY= date.getFullYear() - y; 
+     
+    document.getElementById("c").innerHTML =  birthY+ " years "+ birthM + " months, "+birthD+ " day(s)";
+}    
+</script>
+<br>
+<hr>
+<!--Self Invocation Function-->
+<h3>Self Invocation Function</h3>
+<p>This Function calls itself hence enclosed with () and followed with () without a name</p>
+<p id = "self"></p>
+<script>
+    (function(){ 
+    let x = "Hello!!! Welcome to my JavaScript Practice";
+        document.getElementById("self").innerHTML = x;
+})();
+</script>
+
+<br>
+<hr>
+<!--JavaScript Modules Import and Export-->
+<h3>JavaScript Modules ( Import and Export of files)</h3>
+<p id ="f"></p>
+<script type="module">
+    import {name, age, state} from "./person.js"; //person.js is external exported file
+    let text = "My name is " + name + " , am "+ age + "years, from " +state+ " .";
+    document.getElementById("f").innerHTML = text;
+</script>
+
+<br>
+<hr>
+<!--JSON (JavaScript Object Notation) -->
+<h3>JSON (JavaScript Object Notation)</h3>
+<p id = "js"></p>
+<script>
+    let text = '{"employees": [' 
+    + '{ "firstName" : "John", "lastName" : "Doe"},'
+    + '{ "firstName" : "Anna", "lastName" : "Smith"},'
+    + '{ "firstName" : "Peter", "lastName" : "Jones"}] }';
+const obj = JSON.parse(text);
+document.getElementById("js").innerHTML = obj.employees[1].firstName + " " +  obj.employees[1].lastName;
+</script>
+
+<br><br><hr>
+<button><a href="javaScriptTest2.html"  class="nextButon">Next</a></button>
+<br><br><hr>
+</body>
+</html>

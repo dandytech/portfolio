@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Loader1</title>
+    <link rel="stylesheet" href="stylePageLoader1.css">
+</head>
+<body onload="myLoader()">
+    <div class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <span>Loading...</span>
+    </div>
+    <script>
+        function myLoader(){
+            setTimeout(() => {
+            window.open("pageLoder.html");
+            window.close("pageLoader1.html")
+        }, 5000);
+        }
+    </script>
+</body>
+</html>

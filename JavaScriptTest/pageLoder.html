@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Loader</title>
+    <link rel="stylesheet" href="styles.css">
+
+    </head>
+<body onload="pageLoad()">
+    <div class="header">
+        <div class="logo">Logo here</div>
+        <div class="menu">Menu here</div>
+        <div class="login">Login here</div>
+    </div>
+    <div class="main1">
+
+        <div class="navbar1">
+            <label for="">
+                <a href="iframeProducts.html" target="myIframe">Products</a>
+            </label>
+            <br>
+            <label for="">
+                <a href="iframeContact.html" target="myIframe">Contact Us</a>
+            </label>
+        </div>
+    
+        <!--iframe for for main Div targeted by product and contact links-->
+            <iframe src="iframeMain.html" frameborder="2" 
+                    width="100%" height="600px"
+                    scrolling=""
+                    name="myIframe">
+                    iframe not suported
+            </iframe>
+      
+    </div>
+    <div class="footer1">footer here</div>
+
+
+    <!--Page Loader Loader Div-->
+    <div class="loader" id="close">
+        <img src="/images/loading5.gif" width="10%" alt="Browser not support">
+    </div>
+    
+    <script>
+        function pageLoad(){
+
+        setTimeout(() => {
+            let loader = document.getElementById("close");
+            loader.style.display = "none"; 
+        }, 4000);
+    
+        }
+      
+    </script>
+    </body>
+</html>

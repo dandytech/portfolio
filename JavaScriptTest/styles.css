@@ -1,0 +1,652 @@
+
+body{
+    margin: auto;
+    background-color: blanchedalmond;
+}
+
+.stickyDiv{
+    width: 100%;
+    background-color: green;
+    display: flex;
+    padding: 10px;
+    color:white;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.active{color: tomato;}
+.sign{
+    background-color: wheat;
+    width:150px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+nav{
+    font-size: 20px;
+}
+li a{
+    color: white;
+    text-decoration: none;
+}
+li a:hover{color:red;}
+
+
+nav ul li{
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    list-style: none;
+}
+
+ul li ul{
+    position: absolute;
+    display: none;
+    background-color: wheat;
+}
+
+ul li:hover>ul{
+    display: block;
+}
+
+ul li ul li{
+    display: block;
+}
+
+
+ ul ul:hover{
+     display: block !important;
+ }
+ 
+
+
+ #peekaboo{
+    position:fixed;
+    bottom:150px; /* You can ajust to indicate the height of display */
+    right:-252px; /* turn it - to make display from left and turn all the right methods of the script to left*/
+    background-color: tomato;
+    padding:15px;
+    width:200px;
+    height:50px;
+    font-size:24px;
+    border-radius: 10px;
+    text-align: center;
+ }
+
+.users{
+    padding: 20px;
+    padding-bottom: 30px;
+    width: 50%;
+    height: auto;
+    background-color: blueviolet;
+    border-radius: 15px;
+    box-shadow: 2px 4px greenyellow;
+   
+}
+
+.userbox{
+  display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 0px 0px;
+    width: 40%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.userbox input{
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
+    border: none;
+    box-shadow:cadetblue;
+    padding-left: 10px;
+}
+.userbox button{
+    width: 100%;
+    font-size: 16px;
+    padding: 7px 7px 7px 7px;
+    border-radius: 7px;
+    border: none;
+    background-color: red;
+    color: white;
+    height: 35px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px white;
+}
+.userbox .btn2{
+    background-color: green;
+    animation: btn 3s infinite;
+    cursor: pointer;
+}
+@keyframes btn{
+    0%{transform:scale(0.8);}
+    100%{transform:scale(1.0);}
+}
+    
+.result{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0 !important;
+    background-color: rgba(153, 149, 149, .9);
+   display: none;
+}
+
+.usersConfirm{
+    background-color: blanchedalmond;
+    color: black;
+    padding: 15px;
+    padding-bottom: 30px;
+    box-shadow: 2px 4px greenyellow;
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 100px;
+    top: 0;
+}
+.userbox a{
+    text-decoration: none;
+    color: white;
+}
+
+/*Animating Div Contents*/
+.divAni{
+    width: 50%;
+    background-color: rgb(119, 103, 103);
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.divAnimation1{
+ /*make the width small not to cover the item (arrow)
+ then remove it completely after*/
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden; /*for animation to work*/
+    animation: dan 3s ease-in-out;
+}
+.divAnimation2{ 
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    animation: dan 3s ease-in-out;
+}
+@keyframes dan{
+    From {width: 0%;}
+    To {width: 30%;}
+}
+
+
+/*Using function to call up the animation on focus*/
+.divAni2{
+    width: 50%;
+    background-color: rgb(83, 85, 182);
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.divAnimation3{
+ /*make the width small not to cover the item (arrow)
+ then remove it completely after*/
+    height: 200px;
+    width: 0%; /*hide it when not active or seen*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden; /*for animation to work*/
+    transition: 2s;
+    
+    
+}
+.divAnimation4{ 
+    height: 200px;
+    width: 0%; /*hide it when not active or seen*/
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /*for animation to work*/
+    transition: 2s;
+}
+
+.divAnimation3.active, .divAnimation4.active{
+    width:30%;
+
+}
+
+/*Rotating Animation*/
+.newspaperHold{
+    width:50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.newspaper{
+    padding:.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* Round Progress Bar */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-srif;
+}
+.main{
+    background: #e3edf7;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    border-top:  solid #000;
+    margin-bottom: 30px;
+}
+.skill{
+    width:160px;
+    height: 160px;
+    position: relative;
+}
+.outer{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.7)
+}
+.inner{
+    height: 120px;
+    width: 120px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                -0.5px -0.5px 0px rgab(255, 255, 255, 1), 
+                0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                0px, 12px, 10px, -10px, rgba(0, 0, 0, 0.05);
+}
+#number{
+    font-weight: 600px;
+    color:#555;
+}
+circle{
+    fill:none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset:472;
+    animation: anim 2s linear forwards;
+}
+svg{
+    position: absolute;
+    top:0;
+    left:0;
+}
+@keyframes anim{
+    100%{
+        stroke-dashoffset: 35;
+    }
+}
+
+/*Test 2 Round Progress Bar */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-srif;
+}
+.main2{
+    background: white;
+    height: 50vh;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    border-top: 1px solid #000;
+    border-bottom:  solid #000;
+    margin-bottom: 30px;
+}
+circle{
+    fill:none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset:472;
+    animation: anim 2s linear forwards;
+}
+
+
+
+
+/*Modal style*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10px;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    background:rgba(0,0,0);
+}
+.modal-content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+}
+.close{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Modal style with Header and footer*/
+.modal1{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10px;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    background:rgba(0,0,0);
+}
+.modal-content1{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0px;
+    box-shadow: 0 4px 8px 0
+    rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0
+    rgba(0, 0, 0, 0.19);
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+.close1{
+    color:white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close1:hover, .close1:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header{
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+.modal-body{
+    padding: 2px 16px;
+}
+.modal-footer{
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+}
+
+/*Add Animation */
+@-webkit-keyframes animationtop{
+    from{top:-300px; opacity: 0;}
+    to{top:0; opacity: 1;}
+}
+@keyframes animationtop{
+    from{top:-300px; opacity: 0;}
+    to{top:0; opacity: 1;}
+}
+
+
+.anime{
+    width: 30%;
+    height: 40vh;
+    background-color: #1f87db;
+    color: black;
+    transition: 3s ease-in-out;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    animation: d 2s ease-in-out;
+    transition: 2s;
+    margin-left: -400px;
+
+}
+.anime.active{
+    margin-left: 5px;
+    transform: rotate(360deg);
+}
+.anime:hover{font-size: 20px;}
+
+
+/*linear Progress Bar */
+#myProgress{
+    width:50%;
+    height:30px;
+    position: relative;
+    background-color: #ddd;
+}
+#myBar{
+    background-color: #2af038;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    padding: 5px;
+    color: white;
+}
+.nextButon{
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 24px;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100px;
+    color: white;
+    text-decoration: none;
+    animation: btn 2s ease-out infinite;
+
+}
+@keyframes btn{
+    From{transform: scale(0.7);}
+    to{transform: scale(1);}
+    
+}
+
+/*Page Loader style*/
+.header{
+    width: 100%;
+    background-color: blueviolet;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+.logo{
+    width: 25%;
+    padding: 10px;
+}
+.menu{
+    width: 50%;
+    padding: 10px;
+}
+.login{
+    width: 25%;
+    padding: 10px;
+}
+.main1{
+    width: 100%;
+    display: flex;
+    padding: 1px;;
+    justify-content: space-evenly;
+}
+.navbar1{
+    width: 20%;
+    height:600px;
+    padding: 20px;
+    background-color:rgb(146, 142, 135);
+}
+.navbar1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    
+}
+.main-content{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    background-color: rgb(248, 241, 241);
+    float: right;
+    margin-left: 2px;
+}
+.iframeProducts{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    background-color: rgb(248, 241, 241);
+    float: right;
+    margin-left: 2px;
+    color: red;
+}
+.iframeContact{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    background-color: rgb(248, 241, 241);
+    float: right;
+    margin-left: 2px;
+    color: blue;
+}
+.footer1{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+/*Page loader animated div */
+.loader{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+    font-size: 24px;
+    overflow: hidden;
+    color: white;
+}
+
+/*Page Loader 3 */
+.body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: black;
+}
+.center{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.ring{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: pageLoader3 2s linear infinite;
+}
+@keyframes pageLoader3{
+    0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+    }
+    
+}
+    
+.ring:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+}
+
+span{
+    color: #737373;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 3s ease-in-out infinite;
+}
+@keyframes text{
+    50%{
+        color: black;
+    }
+}
